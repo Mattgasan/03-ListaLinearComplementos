@@ -120,14 +120,28 @@ void inserirElemento()
 
 }
 
-void excluirElemento()
-{
-
-
+void excluirElemento() {
+	
+	int valor;
+	cout << "Digite um valor a ser excluido: ";
+	cin >> (valor);
+	int localiza = posicaoElemento(valor);
+	if (nElementos == 0) {
+		cout << "A lista esta vazia.";
+	}
+	//Todo if precisa de um parenteses () que determina a condicao
+	// [] serve para anunciar um vetor, numero
+	else if (localiza != -1) {
+		lista[localiza] = lista[nElementos - 1];
+		nElementos = nElementos - 1;
+		cout << "O elemento foi excluido." << valor;
+	}
+	else {
+		cout << "O elemento nao esta na lista.";
+	}
 }
+	void buscarElemento(){
 
-void buscarElemento()
-{
 	int valor;
 	cout << "Digite o elemento que queira buscar: ";
 	cin >> valor;
